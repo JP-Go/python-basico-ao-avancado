@@ -67,5 +67,5 @@ def play():
 
 if __name__ == "__main__":
     play()
-    while input("Você quer jogar novamente? [s|N]: ") == "s":
+    while input("Você quer jogar novamente?[s|N]: ") == "s":
         play()
