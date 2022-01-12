@@ -14,12 +14,12 @@ class Produto:
     def desconto(self, percentual: float) -> None:
         self.preco = self.preco * (1 - (percentual / 100))
 
-    # Getter
+    # Define um getter par a propriedade preco. Essa função funciona como atributo
     @property
     def preco(self):
         return self._preco
 
-    # Setter
+    # Define um setter para preco
     @preco.setter
     def preco(self, valor):
         if (isinstance(valor, str)):
