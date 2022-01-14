@@ -116,6 +116,9 @@ class Endereco:
         self.cidade = cidade
         self.estado = estado
 
+    def __del__(self):
+        print(f'{self.cidade}/{self.estado} deletado')
+
 
 class Cliente:
     """ Representa um cliente de uma loja"""
@@ -154,3 +157,6 @@ class Cliente:
 
     def __del__(self):
         print(f"Cliente {self.nome} deletado")
+
+
+# Classes de herança
