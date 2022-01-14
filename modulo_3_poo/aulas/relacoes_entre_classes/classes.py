@@ -160,3 +160,49 @@ class Cliente:
 
 
 # Classes de herança
+
+
+class Pessoa:
+
+    def __init__(self, nome: str, idade: int):
+        self.nome = nome
+        self.idade = idade
+
+    def falar(self):
+        print('Falando')
+
+
+class ClienteH(Pessoa):
+
+    def comprar(self):
+        print('Comprando')
+
+    def falar(self):
+        print('Em cliente')
+
+
+class ClienteVIP(ClienteH):
+
+    def __init__(self, nome: str, sobrenome: str, idade: int):
+        super().__init__(nome, idade)
+        self.sobrenome = sobrenome
+
+    # Sobrepõe o método falar de Pessoa()
+    def falar(self):
+        print(f"{self.nome} {self.sobrenome} está falando vip-mente")
+
+    def falar_como_cliente(self):
+        super().falar()
+
+    def falar_como_pessoa(self):
+        # Chamar o método de uma classe dessa forma exige que passemos a instância
+        Pessoa.falar(self)
+
+
+class Aluno(Pessoa):
+
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+
+    def estudar(self):
+        print('Estudando')
