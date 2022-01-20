@@ -243,7 +243,8 @@ class Eletronico:
         self._ligado = False
 
 
-class SmartPhone(Eletronico, LogMixin):
+class SmartPhone(Eletronico,
+                 LogMixin):  # Mixin adiciona a funcionalidade de logar
 
     def __init__(self, nome) -> None:
         super().__init__(nome)
