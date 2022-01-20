@@ -206,3 +206,72 @@ class Aluno(Pessoa):
 
     def estudar(self):
         print('Estudando')
+
+
+# Classe mixin: Adiciona uma funcionalidade a uma classe, funcionalidade essa
+# não relacionada com a classe
+class LogMixin:
+
+    @staticmethod
+    def write(msg):
+        with open('aulas/relacoes_entre_classes/output/log.log', 'a+') as file:
+            file.write(msg)
+            file.write('\n')
+
+    def log_info(self, msg):
+        self.write(f'INFO: {msg}')
+
+    def log_error(self, msg):
+        self.write(f'ERROR: {msg}')
+
+
+# Classes de herança múltipla
+class Eletronico:
+
+    def __init__(self, nome) -> None:
+        self._nome = nome
+        self._ligado = False
+
+    def ligar(self):
+        if self._ligado:
+            return
+        self._ligado = True
+
+    def desligar(self):
+        if not self._ligado:
+            return
+        self._ligado = False
+
+
+class SmartPhone(Eletronico, LogMixin):
+
+    def __init__(self, nome) -> None:
+        super().__init__(nome)
+        self._conectado = False
+
+    def conectar(self):
+        if not self._ligado:
+            error = f"{self._nome} não está ligado"
+            print(error)
+            self.log_error(error)
+            return
+        if self._conectado:
+            error = f"{self._nome} já está conectado"
+            print(error)
+            self.log_info(error)
+            return
+        print(f"{self._nome} conectou")
+        self._conectado = True
+
+    def desconectar(self):
+        if not self._ligado:
+            error = f"{self._nome} não está ligado"
+            print(error)
+            self.log_error(error)
+            return
+        if not self._conectado:
+            info = f"{self._nome} já está desconectado"
+            print(info)
+            self.log_info(info)
+            return
+        self._conectado = False
