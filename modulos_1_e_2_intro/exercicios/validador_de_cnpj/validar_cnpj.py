@@ -9,7 +9,7 @@ from parsers import parse_cnpj, get_non_validation_digits
 
 
 def validate_cnpj(cnpj: str) -> bool:
-    """ Validates a given CNPJ by checking its digits. Returns True if the CNPJ is valid, and False otherwise"""
+    """Validates a given CNPJ by checking its digits. Returns True if the CNPJ is valid, and False otherwise"""
     cnpj_digits = parse_cnpj(cnpj)
     if len(cnpj_digits) != validators.CNPJ_LEN:
         return False
