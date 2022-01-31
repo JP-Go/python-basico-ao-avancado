@@ -29,7 +29,8 @@ class Vec2(Vec):
     def __add__(self, other):
         if not isinstance(other, Vec2 or Vec):
             raise ValueError(
-                f"Can't sum vector and object of type {type(other).__name__}")
+                f"Can't sum vector and object of type {type(other).__name__}"
+            )
         result = Vec2(self.x + other.x, self.y + other.y)
         return result
 
@@ -37,7 +38,8 @@ class Vec2(Vec):
     def __sub__(self, other):
         if not isinstance(other, Vec2 or Vec):
             raise ValueError(
-                f"Can't sum vector and object of type {type(other).__name__}")
+                f"Can't sum vector and object of type {type(other).__name__}"
+            )
         return Vec2(self.x - other.x, self.y - other.y)
 
     # Não define operador (não é sobrecarga de método)
