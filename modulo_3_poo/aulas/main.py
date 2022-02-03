@@ -1,0 +1,3 @@
+import documentacao
+
+help(documentacao)
