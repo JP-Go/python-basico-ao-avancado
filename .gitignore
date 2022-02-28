@@ -7,3 +7,6 @@
 **/lib64
 **/include
 **/pyvenv.cfg
+**/Pipfile
+**/Pipfile.lock
+**/*.log
