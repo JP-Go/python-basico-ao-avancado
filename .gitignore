@@ -1,4 +1,5 @@
 **/__pycache__/
+**/creds*
 **/output/
 **/.vimrc
 **/sender_data.py
