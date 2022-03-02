@@ -1,3 +1,4 @@
+from pathlib import Path
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.webdriver import WebDriver as Firefox
@@ -5,9 +6,12 @@ from selenium.webdriver.common.by import By
 from creds import my_user, my_pass
 from time import sleep
 
+current_file_path = Path(__file__).parent
+gecko_path = str(current_file_path / "bin" / "chromedriver")
+
 
 class FirefoxAuto:
-    def __init__(self, driver_path: str = "./geckodriver") -> None:
+    def __init__(self, driver_path: str = gecko_path) -> None:
         self.driver_path = driver_path
         self.service = FirefoxService(executable_path=self.driver_path)
         self.options = FirefoxOptions()
