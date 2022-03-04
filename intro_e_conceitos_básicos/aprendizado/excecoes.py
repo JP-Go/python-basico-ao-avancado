@@ -18,5 +18,6 @@ def divide(dividendo, divisor):
     raise ValueError("Division by zero")
 
 
+print(divide(3,1))
 print(divide(1, 2))
 print(divide(1, 0))
