@@ -103,6 +103,8 @@ class Calculadora(QMainWindow):
             self.display.setText(str(result))
         except SyntaxError as e:
             self.display.setText("Conta inválida")
+        except ZeroDivisionError:
+            self.display.setText("Indefinido")
 
 
 if __name__ == "__main__":
