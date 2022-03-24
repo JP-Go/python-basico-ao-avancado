@@ -24,6 +24,7 @@ class App(QMainWindow, Ui_MainWindow):
     def open_image(self):
         # QFileDialog.getOpenFileName() -> Opens a file picker window
         # returns a tuple in this form: (filename,filter)
+        # parent = None-> This widget parent
         img_path, filter = QFileDialog.getOpenFileName(
             self.centralwidget,
             directory=USER_HOME,
