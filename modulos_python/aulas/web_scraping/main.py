@@ -39,7 +39,7 @@ for i, question in enumerate(questions):
     }
 
 for key, data in questions_data.items():
-    print(f" Question {key} ".center(40, "#"))
+    print(f"Question {key} ".center(40, "#"))
     print(f"{data.get('title')}")
     print(f"  {data.get('summary')}")
     print(f"  asked: {data.get('relativetime')}")

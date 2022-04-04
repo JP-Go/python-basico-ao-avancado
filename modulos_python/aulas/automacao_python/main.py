@@ -16,6 +16,7 @@ class FirefoxAuto:
         self.service = FirefoxService(executable_path=self.driver_path)
         self.options = FirefoxOptions()
         self.browser = Firefox(service=self.service, options=self.options)
+        FirefoxService()
 
     def open(self, url: str) -> None:
         self.browser.get(url)

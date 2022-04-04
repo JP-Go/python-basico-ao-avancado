@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QLineEdit
 from PyQt5.QtWidgets import QWidget, QGridLayout, QSizePolicy
+from PyQt5.QtGui import QImage
 
 
 class Calculadora(QMainWindow):
@@ -21,7 +22,6 @@ class Calculadora(QMainWindow):
         self.display.setStyleSheet("* {background: #fff; color: #000; font-size:20px}")
         # QtWidget.setSizePolicy(width_pol,height_pol): Determines how the widget will resize
         self.display.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-
         self.add_button(QPushButton(text="1"), 1, 0)
         self.add_button(QPushButton(text="2"), 1, 1)
         self.add_button(QPushButton(text="3"), 1, 2)
@@ -33,7 +33,7 @@ class Calculadora(QMainWindow):
             callback=self.clear_display,
             style="background:rgb(240,60,60);font-weight: bold;",
         )
-
+        
         self.add_button(QPushButton(text="4"), 2, 0)
         self.add_button(QPushButton(text="5"), 2, 1)
         self.add_button(QPushButton(text="6"), 2, 2)
